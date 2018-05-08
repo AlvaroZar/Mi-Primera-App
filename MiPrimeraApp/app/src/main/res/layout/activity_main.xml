@@ -13,8 +13,8 @@
 
 
     <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:onClick="onClick"
         android:background="@mipmap/chrome"
         android:text="Abrir segunda Activity"
@@ -24,9 +24,9 @@
         />
 
     <Button
-        android:layout_width="100dp"
+        android:layout_width="80dp"
         android:background="@mipmap/chrome"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:onClick="onClick1"
         android:text="Google"
         android:layout_marginBottom="10dp"
@@ -35,19 +35,27 @@
         />
 
     <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:background="@mipmap/chrome"
         android:onClick="onClick2"
         android:text="llamar"
         android:layout_marginBottom="10dp"
         />
     <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:background="@mipmap/chrome"
         android:onClick="onClick3"
         android:text="registro"
+        android:layout_marginBottom="10dp"
+        />
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/chrome"
+        android:onClick="onClick4"
+        android:text="Galeria"
         android:layout_marginBottom="30dp"
         />
 

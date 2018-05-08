@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:inputType="text"
         android:hint="@string/ponerusuario"
+        android:maxLength="15"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -34,10 +35,12 @@
 
         />
     <EditText
+        android:id="@+id/email"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:hint="@string/poneremail"
+        android:maxLength="25"
         />
 
 
@@ -51,10 +54,12 @@
 
         />
     <EditText
+        android:id="@+id/password"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:hint="@string/ponercontraseña"
+        android:maxLength="25"
         />
 
       <RadioGroup
@@ -68,20 +73,19 @@
               android:layout_height="wrap_content"
               android:text="Gender"/>
       <RadioButton
+          android:id="@+id/male"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+          android:text="M"
           />
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="M"/>
+
       <RadioButton
+          android:id="@+id/female"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="F"/>
+        android:layout_height="wrap_content"
+          android:text="F"
+          />
+
       </RadioGroup>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -95,8 +99,12 @@
             android:text="Age"
             />
         <EditText
+            android:id="@+id/age"
             android:layout_width="100dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="3"
+            />
 
     </LinearLayout>
 
@@ -106,13 +114,14 @@
         android:gravity="center"
         android:orientation="vertical"
         >
+
         <Button
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:background="@color/colorPrimary"
-            android:text="Save"
             android:layout_marginBottom="10dp"
-            />
+            android:background="@color/colorPrimary"
+            android:onClick="guardarDatos"
+            android:text="Save" />
         <Button
             android:layout_width="200dp"
             android:layout_height="50dp"

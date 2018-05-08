@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">MIAPP</string>
 
-   <string name="username">Username</string>
+    <string name="username_error">Username</string>
+    <string name="password_error">Password</string>
+
+    <string name="username">Username</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="ponercontraseña">Escribe tu contraseña</string>

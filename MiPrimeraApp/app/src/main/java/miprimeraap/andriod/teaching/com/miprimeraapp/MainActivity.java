@@ -49,9 +49,10 @@ public class MainActivity extends AppCompatActivity {
         Log.d("MainActivity", "onDestroy");
     }
     public void onClick(View view){
-        Intent intent =new Intent(this, SecondActivity.class);
+        Intent intent = new Intent(this, SecondActivity.class);
         intent.putExtra("Paco","Valor de paco");
         intent.putExtra("dinero",200);
+        startActivity(intent);
 
     }
     public void onClick1(View view){
@@ -64,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public  void onClick3(View view){
         Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+    public void onClick4(View view){
+        Intent intent = new Intent(this, GalleryActivity.class);
         startActivity(intent);
     }
 }
