@@ -10,5 +10,10 @@
     <string name="ponercontraseña">Escribe tu contraseña</string>
     <string name="ponerusuario">Escribe tu usuario</string>
     <string name="poneremail">Escribe tu Email</string>
+    <string name="dialog_message">Estas seguro de querer borrar éste usuario?</string>
+    <string name="dialog_title">Confirmacion</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancelar</string>
 
 </resources>

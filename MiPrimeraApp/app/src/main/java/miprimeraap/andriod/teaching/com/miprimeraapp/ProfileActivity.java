@@ -1,12 +1,19 @@
 package miprimeraap.andriod.teaching.com.miprimeraapp;
 
+import android.app.AlertDialog;
 import android.app.Application;
+import android.app.DatePickerDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class ProfileActivity  extends AppCompatActivity{
 
@@ -27,7 +34,20 @@ public class ProfileActivity  extends AppCompatActivity{
         passwordEditText = findViewById(R.id.password);
         passwordEditText.getText().toString();
         ageEditText = findViewById(R.id.age);
-        ageEditText.getText().toString();
+        ageEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus){
+                    new DatePickerDialog(ProfileActivity.this, new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                            ageEditText.setText(year+"/" + (month + 1) + "/" + dayOfMonth);
+                            
+                        }
+                    },1997,6,11).show();
+                }
+            }
+        });
 
         radioButtonMale = findViewById(R.id.male);
         radioButtonMale.getText().toString();
@@ -49,6 +69,32 @@ public class ProfileActivity  extends AppCompatActivity{
         }
 
         }
+     public void onClickDelete (View view) {
+         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+         builder.setTitle(R.string.dialog_title).setMessage(R.string.dialog_message);
+
+         builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+             @Override
+             public void onClick(DialogInterface dialog, int which) {
+                 Toast.makeText(ProfileActivity.this, "SI QUIERO", Toast.LENGTH_LONG).show();
+
+             }
+         });
+         builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+             @Override
+             public void onClick(DialogInterface dialog, int which) {
+
+             }
+         });
+         builder.setNeutralButton(R.string.cancel, new DialogInterface.OnClickListener() {
+             @Override
+             public void onClick(DialogInterface dialog, int which) {
+
+             }
+         });
+         AlertDialog dialog = builder.create();
+         dialog.show();
+     }
 
     }
 

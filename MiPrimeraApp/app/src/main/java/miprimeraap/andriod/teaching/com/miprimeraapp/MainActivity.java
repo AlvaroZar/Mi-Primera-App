@@ -71,4 +71,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, GalleryActivity.class);
         startActivity(intent);
     }
+    public void onClick5(View view){
+        Intent intent = new Intent(this, ListActivity.class);
+        startActivity(intent);
+    }
 }

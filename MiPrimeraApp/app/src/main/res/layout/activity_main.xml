@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/pokemon"
+    android:background="@mipmap/a"
     android:orientation="vertical"
     android:gravity="bottom|center"
     tools:context=".MainActivity">
@@ -16,7 +16,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:onClick="onClick"
-        android:background="@mipmap/chrome"
+        android:background="@mipmap/button"
         android:text="Abrir segunda Activity"
 
 
@@ -25,8 +25,8 @@
 
     <Button
         android:layout_width="80dp"
-        android:background="@mipmap/chrome"
-        android:layout_height="80dp"
+        android:background="@mipmap/button"
+        android:layout_height="50dp"
         android:onClick="onClick1"
         android:text="Google"
         android:layout_marginBottom="10dp"
@@ -36,26 +36,34 @@
 
     <Button
         android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:background="@mipmap/chrome"
+        android:layout_height="50dp"
+        android:background="@mipmap/button"
         android:onClick="onClick2"
         android:text="llamar"
         android:layout_marginBottom="10dp"
         />
     <Button
         android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:background="@mipmap/chrome"
+        android:layout_height="50dp"
+        android:background="@mipmap/button"
         android:onClick="onClick3"
         android:text="registro"
         android:layout_marginBottom="10dp"
         />
     <Button
         android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:background="@mipmap/chrome"
+        android:layout_height="50dp"
+        android:background="@mipmap/button"
         android:onClick="onClick4"
         android:text="Galeria"
+        android:layout_marginBottom="10dp"
+        />
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:background="@mipmap/button"
+        android:onClick="onClick5"
+        android:text="Lista"
         android:layout_marginBottom="30dp"
         />
 

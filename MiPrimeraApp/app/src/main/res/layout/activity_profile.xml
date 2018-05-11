@@ -103,7 +103,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:maxLength="3"
+            android:maxLength="10"
             />
 
     </LinearLayout>
@@ -116,6 +116,7 @@
         >
 
         <Button
+            android:id="@+id/save"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
@@ -123,11 +124,14 @@
             android:onClick="guardarDatos"
             android:text="Save" />
         <Button
+            android:id="@+id/delete"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:background="@color/color2"
-            android:text="Close"
+            android:text="Delete"
+            android:onClick="onClickDelete"
             />
+
 
     </LinearLayout>
 
