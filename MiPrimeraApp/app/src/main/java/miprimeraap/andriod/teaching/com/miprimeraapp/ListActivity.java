@@ -2,10 +2,10 @@ package miprimeraap.andriod.teaching.com.miprimeraapp;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.view.menu.ActionMenuItemView;
-import android.view.InflateException;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,31 +17,43 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.support.v7.widget.Toolbar;
+
+import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity {
 
-    String[] appName = {"Google Chrome", "Android App"};
-    int[] appIcon = {R.mipmap.chrome, R.mipmap.ic_launcher_round};
+    ArrayList<String> appName = new ArrayList<String>();
+    ArrayList<Integer> appIcon = new ArrayList<Integer>();
+
+    private MyAdapter myAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
+        appName.add("Chrome");
+        appName.add("Pokemon");
+
+        appIcon.add(R.mipmap.chrome);
+        appIcon.add(R.mipmap.pokemon);
+
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         getSupportActionBar();
 
         ListView listView = findViewById(R.id.list_view);
-        listView.setAdapter(new MyAdapter());
+        myAdapter = new MyAdapter();
+        listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(ListActivity.this, "Selecciona tu posicion" + position,
-                        Toast.LENGTH_LONG).show();
+               Intent intent = new Intent(ListActivity.this, GameDetailActivity.class);
+
+               intent.putExtra("position", position);
+               startActivity(intent);
             }
         });
 
@@ -61,12 +73,27 @@ public class ListActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater myInflater = getMenuInflater();
+        myInflater.inflate(R.menu.delete_context,menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        appName.remove(0);
+        appIcon.remove(0);
+        myAdapter.notifyDataSetChanged();
+        return super.onContextItemSelected(item);
+    }
+
     private class MyAdapter extends BaseAdapter{
 
 
         @Override
         public int getCount() {
-            return appName.length;
+            return appName.size();
         }
 
         @Override
@@ -86,10 +113,10 @@ public class ListActivity extends AppCompatActivity {
             View rowView = inflater.inflate(R.layout.list_item, parent, false);
 
             ImageView icon = rowView.findViewById(R.id.image_view);
-            icon.setImageResource(appIcon[position]);
+            icon.setImageResource(appIcon.get(position));
 
             TextView textView = rowView.findViewById(R.id.text_view);
-            textView.setText(appName[position]);
+            textView.setText(appName.get(position));
 
             return rowView;
         }

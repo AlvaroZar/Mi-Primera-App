@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameDetailActivity">
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/google"
+
+        />
+
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="60dp"
+        android:src="@mipmap/chrome"
+        android:background="#99FFF000"
+
+        />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:layout_below="@+id/image1"
+        android:text="In the example, CC is the hexadecimal number for 255 * 0.8 = 204. Note that the first two hexadecimal digits are for the alpha channel. The format is #AARRGGBB, where AA is the alpha channel, RR is the red channel, GG is the green channel and BB is the blue channel."
+
+        />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:text="Oficial website"
+        />
+
+</RelativeLayout>

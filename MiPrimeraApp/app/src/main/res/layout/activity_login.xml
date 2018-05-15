@@ -5,12 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
-    android:padding="4dp"
+
     >
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="@color/colorPrimary"
+        app:title="Login"
+        android:minHeight="?attr/actionBarSize"
+        >
+
+    </android.support.v7.widget.Toolbar>
+
     <TextView
+        android:id="@+id/text_username"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Username"
+        android:layout_marginStart="4dp"
+        android:layout_below="@id/toolbar"
         android:textColor="@color/color"
         android:textSize="18dp"
         />
@@ -19,19 +33,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/username"
+        android:layout_below="@+id/toolbar"
         android:layout_marginTop="20dp"
         android:inputType="text"
         android:maxEms="25"
         />
     <TextView
+        android:layout_below="@+id/toolbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:text="Password"
         android:textColor="@color/color"
         android:textSize="18dp"
         android:layout_marginTop="65dp"
         />
     <EditText
+        android:layout_below="@+id/toolbar"
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,6 +59,7 @@
         android:maxEms="25"
         />
     <RelativeLayout
+        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="130dp"
