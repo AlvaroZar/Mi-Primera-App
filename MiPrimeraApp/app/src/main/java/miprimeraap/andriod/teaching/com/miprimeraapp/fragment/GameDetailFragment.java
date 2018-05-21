@@ -2,7 +2,6 @@ package miprimeraap.andriod.teaching.com.miprimeraapp.fragment;
 
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,6 +14,7 @@ import android.widget.TextView;
 import miprimeraap.andriod.teaching.com.miprimeraapp.GameModel;
 import miprimeraap.andriod.teaching.com.miprimeraapp.GamesInteractor;
 import miprimeraap.andriod.teaching.com.miprimeraapp.R;
+import miprimeraap.andriod.teaching.com.miprimeraapp.WebViewActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +55,13 @@ public class GameDetailFragment extends Fragment {
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(game.getOficialWebsiteUr()));
+                Intent webIntent = new Intent(getContext(), WebViewActivity.class);
+                webIntent.putExtra("url",game.getOficialWebsiteUr());
                 startActivity(webIntent);
             }
         });
+
+
 
         return fragmentView;
     }

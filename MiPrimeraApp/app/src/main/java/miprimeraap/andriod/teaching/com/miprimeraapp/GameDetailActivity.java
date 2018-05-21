@@ -1,6 +1,7 @@
 package miprimeraap.andriod.teaching.com.miprimeraapp;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -37,10 +38,27 @@ public class GameDetailActivity extends AppCompatActivity implements GameDetailV
     protected void onStart() {
         super.onStart();
         presenter.startPresenting(this);
-        ViewPager myViewPager = findViewById(R.id.view_pager);
+        final ViewPager myViewPager = findViewById(R.id.view_pager);
         myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
         myViewPager.setAdapter(myPagerAdapter);
         myViewPager.setCurrentItem(currentPosition);
+        getSupportActionBar().setTitle(myPagerAdapter.getPageTitle(currentPosition));
+        myViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+            getSupportActionBar().setTitle(myPagerAdapter.getPageTitle(position));
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     @Override
@@ -52,6 +70,14 @@ public class GameDetailActivity extends AppCompatActivity implements GameDetailV
 
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
+
+
+        }
+
+        @Nullable
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return presenter.getGames().get(position).getName();
         }
 
         @Override
@@ -59,6 +85,7 @@ public class GameDetailActivity extends AppCompatActivity implements GameDetailV
             int gameId = presenter.getGames().get(position).getId();
             return GameDetailFragment.newInstance(gameId);
         }
+
 
         @Override
         public int getCount() {
