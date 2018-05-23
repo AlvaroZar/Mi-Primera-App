@@ -15,6 +15,7 @@
     <string name="yes">Si</string>
     <string name="no">No</string>
     <string name="cancel">Cancelar</string>
+    <string name="basic_preference_file">miprimeraap.android.teaching.com.BASIC_PREFERENCE_FILE</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

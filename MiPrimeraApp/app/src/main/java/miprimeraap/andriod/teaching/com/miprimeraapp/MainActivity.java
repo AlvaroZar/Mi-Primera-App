@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import java.io.File;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -16,6 +18,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("MainActivity", "onCreate");
+        File directorioInterno = getFilesDir();
+        File directorioCache = getCacheDir();
+        Log.d("MainActivity", "Interno: " + directorioInterno.getAbsolutePath());
+        Log.d("MainActivity", "Cache: " + directorioCache.getAbsolutePath());
+
+
+
+
     }
 
     @Override
